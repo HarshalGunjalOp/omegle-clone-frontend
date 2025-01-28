@@ -8,7 +8,7 @@ declare global {
 import { Socket, io } from "socket.io-client";
 // import ChatBox from "./Chat";
 
-const URL = "omegle-clone-backend-production-3fb7.up.railway.app:3000"
+const URL = "omegle-clone-backend-production-3fb7.up.railway.app"
 
 export const Room = ({
     name,
