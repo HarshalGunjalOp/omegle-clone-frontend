@@ -8,7 +8,7 @@ declare global {
 import { Socket, io } from "socket.io-client";
 // import ChatBox from "./Chat";
 
-const URL = "omegle-clone-backend-production-3fb7.up.railway.app"
+const BACKEND_URL = "omegle-clone-backend-production-3fb7.up.railway.app"
 
 export const Room = ({
     name,
@@ -33,8 +33,11 @@ export const Room = ({
     const [roomId, setRoomId] = useState<string | null>(null);
 
     useEffect(() => {
-        const socket = io(URL);
-        socket.on('send-offer', async ({roomId}) => {
+        const socket = io(BACKEND_URL, {
+          withCredentials: true,
+          transports: ['websocket', 'polling'],
+            });         
+            socket.on('send-offer', async ({roomId}) => {
             console.log("sending offer");
             setLobby(false);
             setRoomId(roomId)
