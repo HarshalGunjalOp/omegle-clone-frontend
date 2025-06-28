@@ -8,7 +8,7 @@ declare global {
 import { Socket, io } from "socket.io-client";
 // import ChatBox from "./Chat";
 
-const BACKEND_URL = "https://omegle-clone-backend-beta.vercel.app/"
+const BACKEND_URL = "https://omegle-clone-backend-ngaw.onrender.com"
 
 export const Room = ({
     name,
